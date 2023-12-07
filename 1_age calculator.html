@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+input{
+    font-size: 20px;
+}
+/*input field gets a colour when it gets clicked on */
+input[type=text]:focus{
+    background-color: lightblue;
+}
+
+button {
+    width: 50%; /*so that the text will be inside the button when resized */
+    background-color: blue;
+    color:white;
+    padding: 5px 20px;
+    margin:8px 0;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin:auto;
+}
+</style>
+</head>
+    
+<body>
+<div>
+<p>Key in the year the person is born in to find out their age!</p>
+<!--consist of an input field where you can enter the year of birth */-->
+<input type="text" id="year1">
+
+
+<!--after clicking submit , there would be an initially empty element 
+    that will hold the result.-->
+<br>
+
+<button type="button" onclick="myAge1()">What's the age?</button>
+<!--The result format will be : 
+    "Any one born in (year inputed) is (age calculated) year(s) old."-->
+
+ <p id="demo1"></p>
+<script>
+  function myAge1(){
+    let myYear1=document.getElementById("year1").value;
+    let myCalAge1=new Date().getFullYear() - myYear1; //to make sure this work regardless of any year
+    document.getElementById("demo1").innerHTML = 
+    "Anyone born in " + myYear1 + " is " + myCalAge1 + " year(s) old.";
+  }   
+</script>
+</div>
+</body>
+
+
+</html>
